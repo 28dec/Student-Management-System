@@ -1,0 +1,14 @@
+
+.highlight {
+    background-color:lightgray;
+}
+table,td,th{
+	border: 2px solid green;
+}
+th{
+	text-align: center;
+}
+td[contenteditable=true] {
+	outline: 1px solid #0af; 
+	background: yellow;
+}
