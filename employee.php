@@ -93,8 +93,14 @@
 					<h4>QUẢN LÝ DANH SÁCH MÔN HỌC</h4>
 					
 				</div>
-				<div class="row text-center mx-auto">
-					<input class="text-center mx-auto" style="width:200" type="button" value="VIEW" id="view_subjects_btn">
+				<div class="row text-center mx-auto my-2 py-2">
+					<div class="col-6">
+						Tìm kiếm môn học: <input type="text" id="search_subject_input">
+						<input type="button" id="search_subject_btn" value="SEARCH">
+					</div>
+					<div class="col-6">
+						Xem toàn bộ môn học -> <input class="text-center mx-auto" style="width:200" type="button" value="VIEW" id="view_subjects_btn">
+					</div>
 				</div>
 				<div class="row">
 					<table id="table_subjects" class="w-100 mx-auto border" style="width: 100%"></table>
@@ -103,6 +109,36 @@
 		</div>
 		<div class="jumbotron text-center">
 			<h3>HỌC VIỆN CÔNG NGHỆ BƯU CHÍNH VIỄN THÔNG</h4>
+		</div>
+	</div>
+	<div id="add_subject_div" class="modal" role="dialog">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header text-center">
+					<h6> THÊM MÔN HỌC MỚI</h6>
+				</div>
+					<div class="modal-body">
+						<div class="form-group">
+							<p>Mã môn học</p>
+							<input type="text" id="subject_code_input" class="mx-auto" style="width:75%"><br>
+						</div>
+						<div class="form-group">
+							<p>Tên môn học</p>
+							<input type="text" id="subject_name_input" class="mx-auto" style="width:75%"><br>
+						</div>
+						<div class="form-group">
+							<p>Số tín chỉ</p>
+							<input type="number" id="subject_num_credit_input" class="mx-auto" style="width:75%"><br>
+						</div>
+						<div class="form-group">
+							<p>Khoa</p>
+							<input type="text" id="subject_major_input" class="mx-auto" style="width:75%"><br>
+						</div>
+					</div>
+					<div class="modal-footer">
+						<button id="add_subject_submit" type="submit">SUBMIT</button>
+					</div>
+			</div>
 		</div>
 	</div>
 </body>

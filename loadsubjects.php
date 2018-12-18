@@ -30,6 +30,9 @@
 								echo '<input type="button" value="DELETE" name="delete" class="delete_btn"> </td>';
 							echo "</tr>";
 						}
+						echo '<tr> 
+							<td colspan="5"><input data-toggle="modal" data-target="#add_subject_div" id="add_subject_btn" type="button" value="THÊM MÔN HỌC" style="width:100%;"></td>
+						</tr>';
 					echo "</table>";
 				} else if ($cmd == '#searchsubject'){
 					// echo "deverloping...";

@@ -173,6 +173,26 @@ $(document).on("click", "#search_student_btn", function(){
 	$("#table_students").load("loadstudents.php", {"search_keyword":$("#input_search").val()});
 })
 
+$(document).on("click", "#add_subject_btn", function(){
+	console.log("add_subject_btn clicked!");
+})
+
+$(document).on("click", "#add_subject_submit", function(){
+	$.post(
+		'controller.php',
+		{
+			'command':'addsubject',
+			'subject_name':$("#subject_name_input").val(),
+			'subject_code':$("#subject_code_input").val(),
+			'subject_num_credit':$("#subject_num_credit_input").val(),
+			'subject_major':$("#subject_major_input").val()
+		},
+		function(rps){
+			alert("SERVER response -> " + rps);
+		}
+	)
+})
+
 $(document).on("click", "#view_subjects_btn", function(){
 	$("#table_subjects").load("loadsubjects.php", {"command":"#loadallsubjects"});
 })

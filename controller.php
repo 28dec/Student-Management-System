@@ -72,6 +72,25 @@
 				if(empty($result)) $result = 'ERROR, kiem tra lai csdl';
 				echo $result;
 				break;
+			case 'addsubject':
+				echo "nhan duoc yeu cau addsubject, result = ";
+				$_subject_code = $_POST['subject_code'];
+				$_subject_name = $_POST['subject_name'];
+				$_subject_num_credit = $_POST['subject_num_credit'];
+				$_subject_major = $_POST['subject_major'];
+				$stmt = $conn->prepare("CALL CreateSubject(:subject_code, :subject_name, :subject_num_credit, :subject_major);");
+				$stmt->bindParam(':subject_code', $_subject_code, PDO::PARAM_STR);
+				$stmt->bindParam(':subject_name', $_subject_name, PDO::PARAM_STR);
+				$stmt->bindParam(':subject_num_credit', $_subject_num_credit, PDO::PARAM_INT);
+				$stmt->bindParam(':subject_major', $_subject_major, PDO::PARAM_STR);
+				$stmt->execute();
+				$result = $stmt->fetch()['result'];
+				if(empty($result)){
+					print_r($stmt->errorInfo());
+				} else {
+					echo $result;
+				}
+				break;
 			default:
 				echo "khong hieu command [" . $cmd . "] nghia la gi!";
 				break;
