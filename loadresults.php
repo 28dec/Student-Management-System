@@ -16,23 +16,26 @@
 					echo "<tr>";
 						echo "<th> MÃ MÔN HỌC </th>";
 						echo "<th> TÊN MÔN HỌC </th>";
-						echo "<th> HỌC KỲ </th>";
-						echo "<th> ĐIỂM CHUYÊN CẦN </th>";
-						echo "<th> ĐIỂM GIỮA KỲ </th>";
-						echo "<th> ĐIỂM BÀI TẬP </th>";
-						echo "<th> ĐIỂM CUỐI KỲ </th>";
-						echo "<th> ĐIỂM TỔNG KẾT </th>";
+						echo "<th> STATUS </th>";
+						echo "<th> CC </th>";
+						echo "<th> GK </th>";
+						echo "<th> BT </th>";
+						echo "<th> CUỐI KỲ </th>";
+						echo "<th> TỔNG KẾT </th>";
+						echo "<th> ACTION </th>";
 					echo "</tr>";
 				foreach($result as $row){
 					echo "<tr>";
 						echo "<td>" .$row['sub_code']."</td>";
 						echo "<td>" .$row['sub_name']."</td>";
-						echo "<td>" .$row['sub_time']."</td>";
+						echo "<td>" .$row['status']."</td>";
 						echo "<td>" .$row['sub_chuyencan']."</td>";
 						echo "<td>" .$row['sub_giuaky']."</td>";
 						echo "<td>" .$row['sub_baitap']."</td>";
 						echo "<td>" .$row['sub_cuoiky']."</td>";
 						echo "<td>" . "calculating..." ."</td>";
+						$result_code = $row['sub_code'];
+						echo "<td><button class='modify_result_btn' value='$result_code' >MODIFY</button></td>";
 					echo "</tr>";
 				}
 				echo "</table>";

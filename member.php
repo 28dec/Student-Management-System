@@ -24,10 +24,10 @@
 			echo "đăng nhập thành công";
 			$_SESSION['username'] = $login_result['user_username'];
 			$_SESSION['type'] = $login_result['user_type'];
-			$type = $_SESSION['type'];
-			if($type == 'student'){
+			$type = $login_result['user_type'];
+			if($type == 'STUDENT'){
 				header("Location: student.php");
-			} elseif($type == 'employee'){
+			} elseif($type == 'EMPLOYEE'){
 				header("Location: employee.php");
 			} else {
 				echo "khong biet chuyen user di dau, type = " . $type;
