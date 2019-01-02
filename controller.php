@@ -197,6 +197,29 @@
 				}
 				break;
 			}
+			case 'modifyresultsubmit':{
+				$result_code = $_POST['result_code'];
+				$chuyencan = $_POST['chuyen_can'];
+				$giuaky = $_POST['giua_ky'];
+				$baitap = $_POST['bai_tap'];
+				$cuoiky = $_POST['cuoi_ky'];
+				$status = $_POST['status'];
+				$stmt = $conn->prepare("CALL ModifyStudentResult(?,?,?,?,?,?);");
+				$stmt->bindParam(1,$result_code, PDO::PARAM_STR);
+				$stmt->bindParam(2,$chuyencan, PDO::PARAM_STR);
+				$stmt->bindParam(3,$giuaky, PDO::PARAM_STR);
+				$stmt->bindParam(4,$baitap, PDO::PARAM_STR);
+				$stmt->bindParam(5,$cuoiky, PDO::PARAM_STR);
+				$stmt->bindParam(6,$status, PDO::PARAM_STR);
+				$stmt->execute();
+				$result = $stmt->fetch()['result'];
+				if(empty($result)){
+					print_r($stmt->errorInfo()[2]);
+				} else {
+					echo $result;
+				}
+				break;
+			}
 			default:
 				echo "khong hieu command [" . $cmd . "] nghia la gi!";
 				break;

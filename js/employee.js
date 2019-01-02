@@ -237,6 +237,36 @@ $(document).on("click", ".create_course_btn", function(){
 	console.log("create_course_btn clicked!");
 })
 
+$(document).on("click", ".modify_result_btn", function(){
+	$_0114 = $(this).val().split(";");
+	console.log($_0114);
+	$("#result_code_lbl").html($_0114[0]);
+	$("#chuyen_can_input").val($_0114[1]);
+	$("#giua_ky_input").val($_0114[2]);
+	$("#bai_tap_input").val($_0114[3]);
+	$("#cuoi_ky_input").val($_0114[4]);
+	$("#modify_result_div").modal('toggle');
+})
+
+$(document).on("click", "#modify_result_submit", function(){
+	$.post(
+		'controller.php',
+		{
+			'command':'modifyresultsubmit',
+			'result_code':$("#result_code_lbl").html(),
+			'chuyen_can':$("#chuyen_can_input").val(),
+			'giua_ky':$("#giua_ky_input").val(),
+			'bai_tap':$("#bai_tap_input").val(),
+			'cuoi_ky':$("#cuoi_ky_input").val(),
+			'status':$("#result_status_select").val()
+		},
+		function(rps){
+			alert("SERVER RESPONSE -> " + rps);
+			$("#modify_result_div").modal('toggle');
+		}
+	)
+})
+
 $(document).on("click", ".add_student_to_course", function(){
 	console.log("add_student_to_course btn clicked!");
 	$("#add_student_to_course_div").modal('toggle');
@@ -287,6 +317,8 @@ $(document).on("click", "#add_student_to_course_btn", function(){
 	)
 })
 
+
+
 $(document).on("click", "#view_result_btn", function(){
 	console.log("view_result_btn clicked!");
 	$("#table_results").load(
@@ -297,9 +329,7 @@ $(document).on("click", "#view_result_btn", function(){
 	)
 })
 
-$(document).on("click", ".modify_result_btn", function(){
-	console.log("modify_result_btn clicked!");
-})
+
 
 $(document).on("click", "#add_course_submit", function(){
 	$.post(

@@ -2,8 +2,6 @@
 	<head>
 		<title>^^,</title>
 		<meta charset="utf-8">
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-
 	</head>
 	<body>
 		<?php 
@@ -43,7 +41,7 @@
 				$keyword = $_POST['search_keyword'];
 				$conn = new PDO("mysql:host=localhost;dbname=qlsv", 'root', '1111');
 				$conn->query("SET NAMES 'utf8'");
-				$stmt = $conn->prepare("CALL LoadStudentsByKeyword(:keyword)");
+				$stmt = $conn->prepare("CALL LoadStudentsFullInfoByKeyword(:keyword)");
 				$stmt->bindParam(':keyword', $keyword, PDO::PARAM_STR);
 				$stmt->execute();
 				$result = $stmt->fetchAll(PDO::FETCH_ASSOC);

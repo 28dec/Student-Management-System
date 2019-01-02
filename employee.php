@@ -40,7 +40,7 @@
 								</div>
 								<div class="row my-1 py-2 mx-1 px-3 bg-success">
 									Tìm kiếm  <input type="text" id="input_search"> <input type="button" value ="search" id="search_student_btn">
-								</div>
+								</div>`
 							</div>
 							<div class="col-8">
 								<div class="row my-1">
@@ -76,10 +76,7 @@
 								<label id="student_name_lbl">mr.X</label>
 							</div>
 							<div class="row text-center mx-auto py-2 my-2">
-								<div class="col-6">
-									<input type="button" id="add_result_btn" value="Thêm điểm">
-								</div>
-								<div class="col-6">
+								<div class="col-12">
 									<input type="button" id="view_result_btn" value="Xem điểm">
 								</div>
 							</div>
@@ -243,7 +240,7 @@
 					<div class="form-group">
 						<p>
 							<label for="">Sinh viên -> </label>
-							<label for="" id="student_name_lbl"></label>
+							<label for="" id="student_to_course_name_lbl"></label>
 						</p>
 						<input type="text" id="student_search_input" placeholder="Gõ tên hoặc mã sinh viên">
 						<select id="student_select"></select>
@@ -251,6 +248,34 @@
 				</div>
 				<div class="modal-footer">
 					<button id="add_student_to_course_btn">SUBMIT</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="modify_result_div" class="modal" role="dialog">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h6>SỬA ĐIỂM</h6>
+				</div>
+				<div class="modal-body">
+					<div class="form-group">
+						<p><label for="">Mã điểm -> </label><label id="result_code_lbl"></label></p>
+						<p><label for="">Chuyên cần -> </label><input type="text" id="chuyen_can_input"></p>
+						<p><label for="">Giữa kỳ -> </label><input type="text" id="giua_ky_input"></p>
+						<p><label for="">Bài tập -> </label><input type="text" id="bai_tap_input"></p>
+						<p><label for="">Cuối kỳ -> </label><input type="text" id="cuoi_ky_input"></p>
+						<p>
+							Trạng thái -> 
+							<select id="result_status_select">
+								<option value="STUDYING">ĐANG HỌC</option>
+								<option value="STUDIED">ĐÃ HỌC</option>
+							</select>
+						</p>
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button id="modify_result_submit">SUBMIT</button>
 				</div>
 			</div>
 		</div>
