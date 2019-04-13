@@ -1,12 +1,12 @@
 # Student-Management-System
 Quản lý sinh viên PHP
 Hệ thống quản lý sinh viên bao gồm các tính năng:
-- Đăng nhập
-- Thêm, sửa, xóa Sinh viên
-- Thêm, sửa, xóa Môn học
-- Thêm, sửa, xóa Lớp học
-- Thêm, sửa, xóa sinh viên trong lớp học
-- Thêm, sửa, xóa điểm cho sinh viên
+- Đăng nhập (lưu phiên Session)
+- Quản lý danh sách sinh viên (thêm sửa xóa)
+- Quản lý danh sách môn học (thêm sửa xóa)
+- Quản lý danh sách lớp học (thêm sửa xóa)
+- Quản lý danh sách sinh viên trong lớp học (thêm sửa xóa)
+- Quản lý điểm sinh viên (tổng kết điểm, tự động tính điểm trung bình hệ chữ và hệ số, thêm sửa xóa điểm)
 # Mô hình hệ thống: M-V-C
 HTML view <-> jQuery -> PHP Controller <-> PHP Model <-> Mysql database
 Database thiết kế chuẩn 3 (3rd Normal Form), truy vấn + thay đổi dữ liệu qua Stored procedure
